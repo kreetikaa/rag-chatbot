@@ -17,6 +17,23 @@ and ask questions about it using natural language.
 - Conversation memory
 - Beautiful dark pink & blue UI
 
+  
+  Project Structure
+  rag-doc-qa/
+├── backend/
+│   ├── main.py          # FastAPI app — /upload and /query endpoints
+│   ├── ingestor.py      # PDF loading + recursive chunking
+│   ├── embedder.py      # Embedding + ChromaDB persistence
+│   ├── retriever.py     # Vector similarity search (top-k)
+│   └── chain.py         # LangChain RAG chain with custom prompt
+├── frontend/
+│   └── app.py           # Streamlit UI
+├── vectorstore/         # ChromaDB data (auto-created, gitignored)
+├── uploads/             # Uploaded PDFs (gitignored)
+├── .env.example
+├── requirements.txt
+└── README.md
+
 ## 🚀 How to Run
 1. Clone the repo
 2. Create `.env` file with your `OPENAI_API_KEY`
